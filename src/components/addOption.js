@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 class AddOption extends Component {
-  state = {  }
-  render() { 
-    return ( 
+  handleAddOption(e) {
+    const option = e.target.elements.option.value.trim();
+    if (option) {
+      alert(option);
+    }
+    e.preventDefault();
+  };
+
+  render() {
+    return (
       <h1>
-        Add option
+        <form onSubmit={this.handleAddOption}>
+          <input type="text" name="option" />
+          <button>Add Option</button>
+        </form>
       </h1>
-     );
+    );
   }
 }
- 
+
 export default AddOption;
