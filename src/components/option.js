@@ -3,7 +3,7 @@ class Option extends Component {
   render() {
     const { optionText } = this.props;
     return (
-      <li>Option: {optionText}</li>
+      <li>{optionText}</li>
     );
   }
 }

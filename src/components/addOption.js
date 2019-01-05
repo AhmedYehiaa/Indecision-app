@@ -6,7 +6,7 @@ class AddOption extends Component {
       <h1>
         <form onSubmit={this.props.handleAddOption}>
           <input type="text" name="option" />
-          <button >Add Option</button>
+          <button>Add Option</button>
         </form>
       </h1>
     );

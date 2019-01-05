@@ -27,7 +27,7 @@ class IndecisionApp extends Component {
     } else {
       const options = [...this.state.options];
       options.push(option);
-      this.setState({ options });
+      this.setState({ options, error: '' });
     }
   };
 
