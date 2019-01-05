@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
-class AddOption extends Component {
+import React from 'react';
 
-  render() {
-    return (
-      <h1>
-        <form onSubmit={this.props.handleAddOption}>
-          <input type="text" name="option" />
-          <button>Add Option</button>
-        </form>
-      </h1>
-    );
-  }
+const AddOption = (props) => {
+  return ( 
+    <h1>
+      <form onSubmit={props.handleAddOption}>
+        <input type="text" name="option" />
+        <button>Add Option</button>
+      </form>
+    </h1>
+   );
 }
-
+ 
 export default AddOption;
