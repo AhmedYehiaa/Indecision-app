@@ -11,6 +11,7 @@ class IndecisionApp extends Component {
     selectedOption: undefined,
     error: ''
   }
+  
   handleDeleteOptions = () => {
     this.setState({ options: [] });
   };
@@ -36,13 +37,13 @@ class IndecisionApp extends Component {
   handlePick = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
-    this.setState({selectedOption: option});
+    this.setState({ selectedOption: option });
   };
 
   handleCloseModal = () => {
-    this.setState({selectedOption: undefined});
+    this.setState({ selectedOption: undefined });
   };
-  
+
   render() {
     const title = "Indecision";
     const subTitle = "Put your life in the hands of a comuputer";
@@ -54,21 +55,24 @@ class IndecisionApp extends Component {
           title={title}
           subTitle={subTitle}
         />
-        <Action
-          hasOptions={options.length > 0}
-          handlePick={this.handlePick}
-        />
-        <Options
-          options={options}
-          handleDeleteOptions={this.handleDeleteOptions}
-        />
-        {this.state.error && <p>{this.state.error}</p>}
-        <AddOption
-          handleAddOption={this.handleAddOption} />
-        <OptionModal 
-          selectedOption = {this.state.selectedOption}
-          handleCloseModal = {this.handleCloseModal}
-        />
+        <div className='container'>
+          <Action
+            hasOptions={options.length > 0}
+            handlePick={this.handlePick}
+          />
+          <Options
+            options={options}
+            handleDeleteOptions={this.handleDeleteOptions}
+          />
+          {this.state.error && <p>{this.state.error}</p>}
+          <AddOption
+            handleAddOption={this.handleAddOption} />
+          <OptionModal
+            selectedOption={this.state.selectedOption}
+            handleCloseModal={this.handleCloseModal}
+          />
+
+        </div>
       </React.Fragment>
     );
   }
