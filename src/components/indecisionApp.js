@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import Header from "./components/header";
-import Action from './components/action';
-import Options from './components/options';
-import AddOption from './components/addOption';
+import Header from "./header";
+import Action from './action';
+import Options from './options';
+import AddOption from './addOption';
+import OptionModal from './OptionModal';
 
 class IndecisionApp extends Component {
   state = {
     options: ['Thing one', 'Thing two', 'Thing three'],
+    selectedOption: undefined,
     error: ''
   }
   handleDeleteOptions = () => {
@@ -34,9 +36,13 @@ class IndecisionApp extends Component {
   handlePick = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
-    alert(option)
+    this.setState({selectedOption: option});
   };
 
+  handleCloseModal = () => {
+    this.setState({selectedOption: undefined});
+  };
+  
   render() {
     const title = "Indecision";
     const subTitle = "Put your life in the hands of a comuputer";
@@ -59,6 +65,10 @@ class IndecisionApp extends Component {
         {this.state.error && <p>{this.state.error}</p>}
         <AddOption
           handleAddOption={this.handleAddOption} />
+        <OptionModal 
+          selectedOption = {this.state.selectedOption}
+          handleCloseModal = {this.handleCloseModal}
+        />
       </React.Fragment>
     );
   }

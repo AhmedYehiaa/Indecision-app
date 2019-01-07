@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import IndecisionApp from './indecisionApp';
+import IndecisionApp from './components/indecisionApp';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<IndecisionApp />, document.getElementById('root'));
