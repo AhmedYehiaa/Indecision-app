@@ -14,10 +14,14 @@ const Options = (props) => {
         </button>
       </div>
       <ul>
-        {options.map(option => <Option
-          key={option}
-          handleDeleteOption={handleDeleteOption}
-          optionText={option} />)}
+        {options.map((option, index) => (
+          <Option
+            key={index}
+            optionText={option}
+            handleDeleteOption={handleDeleteOption}
+            count={index + 1}
+          />)
+        )}
       </ul>
     </React.Fragment>
   );
