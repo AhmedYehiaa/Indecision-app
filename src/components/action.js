@@ -5,6 +5,7 @@ const Action = (props) => {
   return (
     <React.Fragment>
       <button
+        className='big-button'
         disabled={!hasOptions}
         onClick={handlePick}
       >

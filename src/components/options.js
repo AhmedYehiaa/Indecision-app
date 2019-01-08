@@ -5,7 +5,9 @@ const Options = (props) => {
   const { options, handleDeleteOptions } = props;
   return (
     <React.Fragment>
-      <button onClick={handleDeleteOptions}>Remove All</button>
+      <button
+        className='button button--link' 
+        onClick={handleDeleteOptions}>Remove All</button>
       <ul>
         {options.map(option => <Option key={option} optionText={option} />)}
       </ul>

@@ -5,7 +5,7 @@ const AddOption = (props) => {
     <h1>
       <form onSubmit={props.handleAddOption}>
         <input type="text" name="option" />
-        <button>Add Option</button>
+        <button className='button'>Add Option</button>
       </form>
     </h1>
    );
