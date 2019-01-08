@@ -72,7 +72,7 @@ class IndecisionApp extends Component {
               handleDeleteOptions={this.handleDeleteOptions}
               handleDeleteOption={this.handleDeleteOption}
             />
-            {this.state.error && <p>{this.state.error}</p>}
+            {this.state.error && <p className='add-option-error'>{this.state.error}</p>}
             <AddOption
               handleAddOption={this.handleAddOption} />
           </div>
