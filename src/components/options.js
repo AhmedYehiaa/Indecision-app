@@ -13,7 +13,7 @@ const Options = (props) => {
           Remove All
         </button>
       </div>
-      <ul>
+      <ul className='options'>
         {options.map((option, index) => (
           <Option
             key={index}
