@@ -2,14 +2,22 @@ import React from 'react';
 import Option from './option';
 
 const Options = (props) => {
-  const { options, handleDeleteOptions } = props;
+  const { options, handleDeleteOptions, handleDeleteOption } = props;
   return (
     <React.Fragment>
-      <button
-        className='button button--link' 
-        onClick={handleDeleteOptions}>Remove All</button>
+      <div className="widget-header">
+        <h3 className="widget-header__title">Your Options</h3>
+        <button
+          className='button button--link'
+          onClick={handleDeleteOptions}>
+          Remove All
+        </button>
+      </div>
       <ul>
-        {options.map(option => <Option key={option} optionText={option} />)}
+        {options.map(option => <Option
+          key={option}
+          handleDeleteOption={handleDeleteOption}
+          optionText={option} />)}
       </ul>
     </React.Fragment>
   );

@@ -11,9 +11,15 @@ class IndecisionApp extends Component {
     selectedOption: undefined,
     error: ''
   }
-  
+
   handleDeleteOptions = () => {
     this.setState({ options: [] });
+  };
+
+  handleDeleteOption = (optionText) => {
+    let options = [...this.state.options];
+    let filteredOptions = options.filter(option => option !== optionText)
+    this.setState({ options: filteredOptions });
   };
 
   handleAddOption = (e) => {
@@ -60,19 +66,21 @@ class IndecisionApp extends Component {
             hasOptions={options.length > 0}
             handlePick={this.handlePick}
           />
-          <Options
-            options={options}
-            handleDeleteOptions={this.handleDeleteOptions}
-          />
-          {this.state.error && <p>{this.state.error}</p>}
-          <AddOption
-            handleAddOption={this.handleAddOption} />
-          <OptionModal
-            selectedOption={this.state.selectedOption}
-            handleCloseModal={this.handleCloseModal}
-          />
-
+          <div className="widget">
+            <Options
+              options={options}
+              handleDeleteOptions={this.handleDeleteOptions}
+              handleDeleteOption={this.handleDeleteOption}
+            />
+            {this.state.error && <p>{this.state.error}</p>}
+            <AddOption
+              handleAddOption={this.handleAddOption} />
+          </div>
         </div>
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          handleCloseModal={this.handleCloseModal}
+        />
       </React.Fragment>
     );
   }
