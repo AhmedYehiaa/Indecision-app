@@ -1,19 +1,19 @@
 import React from 'react';
 
 const Option = (props) => {
-  const { optionText, count, handleDeleteOption } = props;
+	const { optionText, count, handleDeleteOption } = props;
 
-  return (
-    <div className='option'>
-      <p className='option__text'>{count}. {optionText}</p>
-      <button
-        className='button button--link'
-        onClick={(e) => handleDeleteOption(optionText)}
-      >
+	return (
+		<div className='option'>
+			<p className='option__text'>{count}. {optionText}</p>
+			<button
+				className='button button--link'
+				onClick={(e) => handleDeleteOption(optionText)}
+			>
         remove
-      </button>
-    </div>
-  );
-}
+			</button>
+		</div>
+	);
+};
 
 export default Option;
