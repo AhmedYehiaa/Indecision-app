@@ -3,22 +3,25 @@ module.exports = {
         "browser": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended",
+        "airbnb",
+    ],
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
         },
         "ecmaVersion": 2018,
-        "sourceType": "module"
+        "sourceType": "module",
     },
     "plugins": [
+        "babel",
         "react"
     ],
     "rules": {
-        "indent": [
-            "error",
-            "tab"
-        ],
+        "react/jsx-uses-react": 1,
+        "react/react-in-jsx-scope": 1,
         "linebreak-style": [
             "error",
             "unix"
